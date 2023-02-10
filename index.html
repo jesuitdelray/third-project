@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <script defer src="index.js" type="module"></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="wrapper">
+      <section id="card-details">
+        <h4 id="header-card">Enter card details</h4>
+        <input class="card-input" placeholder="Enter your name" />
+        <input class="card-input" placeholder="Enter card number" />
+        <input class="card-input" placeholder="Enter CVV" />
+        <button id="pay-button">Pay</button>
+      </section>
+      <header class="header">
+        <h1 id="header-h1">Jimmy’s Diner</h1>
+        <h3 id="header-h3">The best burgers and pizzas in town.</h3>
+      </header>
+      <section id="menu">
+        <section class="item-block">
+          <img class="icons" src="images/pizza.png" alt="pizza" />
+          <section class="item-text">
+            <h5 class="item-name">Pizza</h5>
+            <p class="item-description" id="pizzaContain">
+              pepperoni, mushrom, mozarella
+            </p>
+            <p class="item-cost">14$</p>
+          </section>
+          <div class="additemsBtn" id="addPizza" alt="Add items button">+</div>
+        </section>
+        <section class="item-block">
+          <img class="icons" src="images/burger.png" alt="burger" />
+          <section class="item-text">
+            <h5 class="item-name">Hamburger</h5>
+            <p class="item-description" id="hamburgerContain">
+              beef, cheese, lettuce
+            </p>
+            <p class="item-cost">12$</p>
+          </section>
+          <div class="additemsBtn" id="addHamburger" alt="Add items button">
+            +
+          </div>
+        </section>
+        <section class="item-block">
+          <img class="icons" src="images/beer.png" alt="beer" />
+          <section class="item-text">
+            <h5 class="item-name">Beer</h5>
+            <p class="item-description" id="beerContain">
+              grain, hops, yeast, water
+            </p>
+            <p class="item-cost">12$</p>
+          </section>
+          <div class="additemsBtn" id="addBeer" alt="Add items button">+</div>
+        </section>
+      </section>
+      <footer id="order-list">
+        <h4>Your order</h4>
+        <section id="order">
+          <section class="order-name">
+            <h4>Pizza</h4>
+            <h4>14$</h4>
+          </section>
+          <section class="order-name">
+            <h4>Pizza</h4>
+            <h4>14$</h4>
+          </section>
+          <section class="order-name">
+            <h4>Pizza</h4>
+            <h4>14$</h4>
+          </section>
+          <section id="total-price">
+            <h4>Total price:</h4>
+            <h4>14$</h4>
+          </section>
+          <button id="order-button">Complete order</button>
+        </section>
+      </footer>
+    </section>
+  </body>
+</html>
