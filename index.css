@@ -1,4 +1,4 @@
-#wrapper {
+.wrapper {
   position: relative;
   object-fit: cover;
   margin-left: auto;
@@ -28,19 +28,19 @@
   margin-top: 20px;
   column-gap: 10px;
 } */
-#header-h1 {
+.header-h1 {
   padding-top: 30px;
   padding-left: 30px;
   text-shadow: 0px 0px 10px black;
   font-family: "Smythe", cursive;
   font-size: 36px;
 }
-#header-h3 {
+.header-h3 {
   padding-left: 30px;
   text-shadow: 0px 0px 10px black;
   font-family: "Smythe", cursive;
 }
-#menu {
+.menu {
   margin-top: 20px;
 }
 .item-block {
@@ -105,7 +105,7 @@
   font-size: 12px;
 }
 
-#order-list {
+.order-list {
   text-align: center;
   line-height: 0;
   font-size: 14px;
@@ -119,7 +119,7 @@
   line-height: 0px;
 }
 
-#total-price {
+.total-price {
   display: flex;
   justify-content: space-between;
   margin: 0 20px;
@@ -128,7 +128,7 @@
   border-top: 1px solid rgb(193, 193, 193);
 }
 
-#card-details {
+.card-details {
   display: none;
   position: absolute;
   top: 25%;
@@ -141,19 +141,20 @@
   background-color: white;
 }
 
-#order-button {
+.order-button {
   width: 90%;
   padding: 15px 0;
   background-color: #16db99;
   border: 0;
   color: white;
+  cursor: pointer;
 }
 
-#order-button:hover {
+.order-button:hover {
   background-color: #34dda5;
 }
 
-#header-card {
+.header-card {
   margin-top: 30px;
   margin-bottom: 15px;
   font-size: 20px;
@@ -165,14 +166,11 @@
   margin-top: 6px;
 }
 
-#pay-button {
+.pay-button {
   margin-top: 15px;
   width: 90%;
   padding: 15px 0;
   background-color: #16db99;
   border: 0;
   color: white;
-}
-
-#order-name {
 }
