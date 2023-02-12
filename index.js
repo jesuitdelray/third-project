@@ -30,7 +30,19 @@ const orderListEL = document.getElementById("orderList");
 const orderEl = document.getElementById("order");
 const totalEl = document.getElementById("totalPrice");
 const orderBtnEl = document.getElementById("orderButton");
-let orderBtnExist = false;
+const cardDetailsEl = document.getElementById("cardDetails");
+
+const cardName = document.getElementById("cardInputName");
+const cardNumber = document.getElementById("cardInputNumber");
+const cardCVV = document.getElementById("cardInputCVV");
+
+const payBtn = document.getElementById("payButton");
+
+let cardData = {
+  name: "",
+  number: 0,
+  CVV: 0,
+};
 
 let count = {
   pizza: 0,
@@ -71,11 +83,28 @@ addBeerBtn.addEventListener("click", function () {
   renderOrder();
 });
 
-if (orderBtnExist === true) {
-  orderBtnEl.addEventListener("click", function () {
-    console.log("working");
-  });
-}
+document.addEventListener("click", function (e) {
+  if (e.target.id !== "orderButton") return;
+  cardDetailsEl.style.display = "flex";
+});
+
+document.addEventListener("click", function (e) {
+  if (e.target.id !== "payButton") return;
+  if (
+    cardName.value.length > 1 &&
+    cardName.value.length < 99 &&
+    Number(cardNumber.value) > 1 &&
+    Number(cardCVV.value) >= 1 &&
+    Number(cardCVV.value) <= 999
+  ) {
+    cardData.name = cardName.value;
+    cardData.number = cardNumber.value;
+    cardData.CVV = cardCVV.value;
+    console.log(cardData);
+    cardDetailsEl.style.display = "none";
+    congratulation();
+  }
+});
 
 function renderOrder() {
   const pizzaHtml = `<div class="order-name">
@@ -104,12 +133,20 @@ function renderOrder() {
   if (totalPrice) {
     orderEl.innerHTML =
       pizzaHtml + hamburgerHtml + beerHtml + totalHtml + completeBtnHtml;
-    orderBtnExist = true;
   }
 }
 
 function updateTotal() {
   totalPrice = totalPizza + totalHamburger + totalBeer;
+}
+
+function congratulation() {
+  orderEl.innerHTML = `<p class="congrat">Thank you for your order!</p>`;
+  totalPizza = 0;
+  totalHamburger = 0;
+  totalBeer = 0;
+
+  totalPrice = 0;
 }
 // let pizzaPrice = menuArray[0].price
 // let hamburgerPrice = menuArray[1].price

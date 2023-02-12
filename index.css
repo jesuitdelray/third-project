@@ -129,7 +129,7 @@
   border-top: 1px solid rgb(193, 193, 193);
 }
 
-.card-details {
+#cardDetails {
   display: none;
   position: absolute;
   top: 25%;
@@ -171,11 +171,17 @@
   margin-top: 6px;
 }
 
-.pay-button {
+#payButton {
   margin-top: 15px;
   width: 90%;
   padding: 15px 0;
   background-color: #16db99;
   border: 0;
   color: white;
+}
+
+.congrat {
+  font-size: 36px;
+  font-family: "Smythe", cursive;
+  color: #16db99;
 }
