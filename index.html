@@ -4,7 +4,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
-    <script defer src="index.js" type="module"></script>
+    <script defer type="module" src="index.js"></script>
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,12 +15,35 @@
   </head>
   <body>
     <section class="wrapper">
-      <div class="card-details">
+      <div class="card-details" id="cardDetails">
         <h4 class="header-card">Enter card details</h4>
-        <input class="card-input" placeholder="Enter your name" />
-        <input class="card-input" placeholder="Enter card number" />
-        <input class="card-input" placeholder="Enter CVV" />
-        <button class="pay-button">Pay</button>
+        <input
+          class="card-input-name"
+          id="cardInputName"
+          placeholder="Enter your name"
+          type="text"
+        />
+        <p class="warning-text-name" id="wrongName">
+          Please, write correct name
+        </p>
+        <input
+          class="card-input-number"
+          id="cardInputNumber"
+          placeholder="Enter card number"
+        />
+        <p class="warning-text-number" id="wrongNumber">
+          Card number should contain numbers
+        </p>
+        <input
+          class="card-input-CVV"
+          id="cardInputCVV"
+          placeholder="Enter CVV"
+          type="number"
+        />
+        <p class="warning-text-CVV" id="wrongCVV">
+          CVV number should contain 3 numbers
+        </p>
+        <button class="payButton" id="payButton">Pay</button>
       </div>
       <header class="header">
         <h1 class="header-h1">Jimmy’s Diner</h1>
@@ -30,7 +53,7 @@
         <div class="item-block">
           <img class="icons" src="images/pizza.png" alt="pizza" />
           <div class="item-text">
-            <h5 class="item-name">Pizza</h5>
+            <p class="item-name">Pizza</p>
             <p class="item-description" id="pizzaContain">
               pepperoni, mushrom, mozarella
             </p>
@@ -41,7 +64,7 @@
         <div class="item-block">
           <img class="icons" src="images/burger.png" alt="burger" />
           <div class="item-text">
-            <h5 class="item-name">Hamburger</h5>
+            <p class="item-name">Hamburger</p>
             <p class="item-description" id="hamburgerContain">
               beef, cheese, lettuce
             </p>
@@ -54,7 +77,7 @@
         <div class="item-block">
           <img class="icons" src="images/beer.png" alt="beer" />
           <div class="item-text">
-            <h5 class="item-name">Beer</h5>
+            <p class="item-name">Beer</p>
             <p class="item-description" id="beerContain">
               grain, hops, yeast, water
             </p>
@@ -63,28 +86,12 @@
           <div class="additemsBtn" id="addBeer" alt="Add items button">+</div>
         </div>
       </section>
-      <footer class="order-list">
-        <h4>Your order</h4>
-        <div class="order">
-          <div class="order-name">
-            <h4>Pizza</h4>
-            <h4>14$</h4>
-          </div>
-          <div class="order-name">
-            <h4>Pizza</h4>
-            <h4>14$</h4>
-          </div>
-          <div class="order-name">
-            <h4>Pizza</h4>
-            <h4>14$</h4>
-          </div>
-          <div class="total-price">
-            <h4>Total price:</h4>
-            <h4>14$</h4>
-          </div>
-          <button class="order-button">Complete order</button>
+      <div class="order-list" id="orderList">
+        <div class="order" id="order">
+          <div class="total-price" id="total-price"></div>
         </div>
-      </footer>
+        <button class="order-button" id="orderButton">Complete order</button>
+      </div>
     </section>
   </body>
 </html>

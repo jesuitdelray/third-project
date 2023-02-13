@@ -71,11 +71,12 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
+  user-select: none;
 }
 
 .additemsBtn:hover {
   font-size: 25px;
-  cursor: cell;
+  cursor: pointer;
 }
 
 .item-text {
@@ -136,18 +137,25 @@
   flex-direction: column;
   align-items: center;
   width: 90%;
-  height: 50%;
+  min-height: 50%;
   box-shadow: 0 0 10px black;
   background-color: white;
+  padding-bottom: 10px;
+}
+
+#your-order {
+  font-weight: bold;
 }
 
 .order-button {
+  display: none;
   width: 90%;
   padding: 15px 0;
   background-color: #16db99;
   border: 0;
   color: white;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .order-button:hover {
@@ -158,19 +166,66 @@
   margin-top: 30px;
   margin-bottom: 15px;
   font-size: 20px;
+  overflow-y: hidden;
 }
 
-.card-input {
+.card-input-name {
   width: 90%;
   padding: 15px;
   margin-top: 6px;
+  text-decoration: none;
 }
 
-.pay-button {
+.card-input-number {
+  width: 90%;
+  padding: 15px;
+  margin-top: 6px;
+  text-decoration: none;
+}
+
+.card-input-CVV {
+  width: 90%;
+  padding: 15px;
+  margin-top: 6px;
+  text-decoration: none;
+}
+
+.warning-text-name {
+  display: none;
+  line-height: 0;
+  color: red;
+  font-size: 12px;
+}
+
+.warning-text-number {
+  display: none;
+  line-height: 0;
+  color: red;
+  font-size: 12px;
+}
+
+.warning-text-CVV {
+  display: none;
+  line-height: 0;
+  color: red;
+  font-size: 12px;
+}
+
+.payButton {
   margin-top: 15px;
   width: 90%;
   padding: 15px 0;
   background-color: #16db99;
   border: 0;
   color: white;
+}
+
+.payButton:hover {
+  background-color: #34dda5;
+  cursor: pointer;
+}
+.congrat {
+  font-size: 36px;
+  font-family: "Smythe", cursive;
+  color: #16db99;
 }
