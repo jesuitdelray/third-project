@@ -15,12 +15,35 @@
   </head>
   <body>
     <section class="wrapper">
-      <div id="cardDetails">
+      <div class="card-details" id="cardDetails">
         <h4 class="header-card">Enter card details</h4>
-        <input class="card-input" id="cardInputName" placeholder="Enter your name" type="text" />
-        <input class="card-input" id="cardInputNumber" placeholder="Enter card number"/>
-        <input class="card-input" id="cardInputCVV" placeholder="Enter CVV" type="number"/>
-        <button id="payButton">Pay</button>
+        <input
+          class="card-input-name"
+          id="cardInputName"
+          placeholder="Enter your name"
+          type="text"
+        />
+        <p class="warning-text-name" id="wrongName">
+          Please, write correct name
+        </p>
+        <input
+          class="card-input-number"
+          id="cardInputNumber"
+          placeholder="Enter card number"
+        />
+        <p class="warning-text-number" id="wrongNumber">
+          Card number should contain numbers
+        </p>
+        <input
+          class="card-input-CVV"
+          id="cardInputCVV"
+          placeholder="Enter CVV"
+          type="number"
+        />
+        <p class="warning-text-CVV" id="wrongCVV">
+          CVV number should contain 3 numbers
+        </p>
+        <button class="payButton" id="payButton">Pay</button>
       </div>
       <header class="header">
         <h1 class="header-h1">Jimmy’s Diner</h1>
@@ -63,27 +86,11 @@
           <div class="additemsBtn" id="addBeer" alt="Add items button">+</div>
         </div>
       </section>
-      <div id="orderList">
-        <!-- <p id="your-order">Your order</p> -->
-        <div id="order">
-          <!-- <div class="order-name">
-            <h4>Pizza</h4>
-            <h4>14$</h4>
-          </div>
-          <div class="order-name">
-            <h4>Pizza</h4>
-            <h4>14$</h4>
-          </div>
-          <div class="order-name">
-            <h4>Pizza</h4>
-            <h4>14$</h4>
-          </div> -->
-          <div id="total-price">
-            <!-- <p>Total price:</p>
-            <p>14$</p> -->
-          <!-- </div>
-          <button id="orderButton">Complete order</button>
-        </div> -->
+      <div class="order-list" id="orderList">
+        <div class="order" id="order">
+          <div class="total-price" id="total-price"></div>
+        </div>
+        <button class="order-button" id="orderButton">Complete order</button>
       </div>
     </section>
   </body>

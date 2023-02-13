@@ -36,6 +36,10 @@ const cardName = document.getElementById("cardInputName");
 const cardNumber = document.getElementById("cardInputNumber");
 const cardCVV = document.getElementById("cardInputCVV");
 
+const wrongNameEl = document.getElementById("wrongName");
+const wrongNumberEl = document.getElementById("wrongNumber");
+const wrongCvvEl = document.getElementById("wrongCVV");
+
 const payBtn = document.getElementById("payButton");
 
 let cardData = {
@@ -94,7 +98,7 @@ document.addEventListener("click", function (e) {
     cardName.value.length > 1 &&
     cardName.value.length < 99 &&
     Number(cardNumber.value) > 1 &&
-    Number(cardCVV.value) >= 1 &&
+    Number(cardCVV.value) >= 111 &&
     Number(cardCVV.value) <= 999
   ) {
     cardData.name = cardName.value;
@@ -102,7 +106,19 @@ document.addEventListener("click", function (e) {
     cardData.CVV = cardCVV.value;
     console.log(cardData);
     cardDetailsEl.style.display = "none";
+    wrongNameEl.style.display = "none";
+    wrongNumberEl.style.display = "none";
+    wrongCvvEl.style.display = "none";
     congratulation();
+  }
+  if (cardName.value.length <= 1 || cardName.value.length > 99) {
+    wrongNameEl.style.display = "flex";
+  }
+  if (Number(cardNumber.value) < 1 || Number(cardNumber.value.length) > 40) {
+    wrongNumberEl.style.display = "flex";
+  }
+  if (Number(cardCVV.value) < 111 || Number(cardCVV.value) > 999) {
+    wrongCvvEl.style.display = "flex";
   }
 });
 
@@ -127,12 +143,9 @@ function renderOrder() {
   <p>${totalPrice}</p>
   </div>`;
 
-  const completeBtnHtml = `</div>
-  <button id="orderButton">Complete order</button></div>`;
-
   if (totalPrice) {
-    orderEl.innerHTML =
-      pizzaHtml + hamburgerHtml + beerHtml + totalHtml + completeBtnHtml;
+    orderEl.innerHTML = pizzaHtml + hamburgerHtml + beerHtml + totalHtml;
+    orderBtnEl.style.display = "inline-block";
   }
 }
 
@@ -141,55 +154,13 @@ function updateTotal() {
 }
 
 function congratulation() {
+  orderBtnEl.style.display = "none";
   orderEl.innerHTML = `<p class="congrat">Thank you for your order!</p>`;
   totalPizza = 0;
   totalHamburger = 0;
   totalBeer = 0;
-
   totalPrice = 0;
+  count.pizza = 0;
+  count.hamburger = 0;
+  count.beer = 0;
 }
-// let pizzaPrice = menuArray[0].price
-// let hamburgerPrice = menuArray[1].price
-// let beerPrice = menuArray[2].price
-
-// let plusPizza = `<div class="order-name">
-// <p>${menuArray[0].name}</p>
-// <p>${pizzaPrice}</p>
-// </div>`;
-
-// let plusHamburger = `<div class="order-name">
-// <p>${menuArray[1].name}</p>
-// <p>${hamburgerPrice}</p>
-// </div>`;
-
-// let plusBeer = `<div class="order-name">
-// <p>${menuArray[2].name}</p>
-// <p>${beerPrice}</p>
-// </div>`;
-
-// let orderData = ``;
-
-// addPizzaBtn.addEventListener("click", function () {
-//   if(!orderData) {
-//   orderData += plusPizza;
-//   render()
-// } else {
-//   plusPizza.filter(function(){
-//     'pizza'
-//   })
-//   render();
-// }});
-
-// addHamburgerBtn.addEventListener("click", function () {
-//   orderData += plusHamburger;
-//   render();
-// });
-
-// addBeerBtn.addEventListener("click", function () {
-//   orderData += plusBeer;
-//   render();
-// });
-
-// function render() {
-//   orderList.innerHTML += orderData;
-// }
